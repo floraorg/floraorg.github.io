@@ -106,7 +106,7 @@
 
         <div class="content">
             <p>
-                organization of people creating random tools that dont suck.
+                organization of people creating random tools that don't suck.
                 current projects:
             </p>
             <div class="projects">
@@ -129,7 +129,7 @@
                     <a href="https://github.com/floraorg/faux">faux</a>
                     <p>
                         a beautiful, fast, easy to use and open source avatar
-                        generato
+                        generator
                     </p>
                 </div>
                 <div class="project">
@@ -289,7 +289,10 @@
                 gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
                 const uImage = gl.getUniformLocation(program, "u_image");
-                const uResolution = gl.getUniformLocation(program, "u_resolution");
+                const uResolution = gl.getUniformLocation(
+                    program,
+                    "u_resolution",
+                );
                 const uLevels = gl.getUniformLocation(program, "u_levels");
 
                 const texture = gl.createTexture();
@@ -306,10 +309,26 @@
                     gl.UNSIGNED_BYTE,
                     new Uint8Array([0, 0, 0, 255]),
                 );
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+                gl.texParameteri(
+                    gl.TEXTURE_2D,
+                    gl.TEXTURE_WRAP_S,
+                    gl.CLAMP_TO_EDGE,
+                );
+                gl.texParameteri(
+                    gl.TEXTURE_2D,
+                    gl.TEXTURE_WRAP_T,
+                    gl.CLAMP_TO_EDGE,
+                );
+                gl.texParameteri(
+                    gl.TEXTURE_2D,
+                    gl.TEXTURE_MIN_FILTER,
+                    gl.NEAREST,
+                );
+                gl.texParameteri(
+                    gl.TEXTURE_2D,
+                    gl.TEXTURE_MAG_FILTER,
+                    gl.NEAREST,
+                );
 
                 function draw() {
                     gl.viewport(0, 0, canvas.width, canvas.height);
