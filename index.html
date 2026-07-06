@@ -86,6 +86,10 @@
                 color: #aaaaaa;
             }
 
+            #dither-canvas {
+                opacity: 0.4;
+            }
+
             @media (max-width: 600px) {
                 .project {
                     flex-wrap: wrap;
@@ -94,6 +98,21 @@
                 /* description drops to its own full-width line below the icon + name */
                 .project p {
                     flex-basis: 100%;
+                }
+                #dither-canvas {
+                    opacity: 0.1;
+                }
+            }
+
+            @media (max-width: 900px) {
+                #dither-canvas {
+                    opacity: 0.2;
+                }
+            }
+
+            @media (max-width: 600px) {
+                #dither-canvas {
+                    opacity: 0.1;
                 }
             }
         </style>
@@ -106,8 +125,7 @@
 
         <div class="content">
             <p>
-                organization of people creating random tools that don't suck.
-                current projects:
+               random utilities for the web. current projects: 
             </p>
             <div class="projects">
                 <div class="project">
@@ -178,6 +196,18 @@
                 />
                 <a href="https://rex.wf">rex</a>
             </div>
+            <img
+                src="/88x31.png"
+                alt=""
+                style="
+                    position: fixed;
+                    left: 30px;
+                    bottom: 30px;
+                    width: 88px;
+                    height: 31px;
+                    pointer-events: auto;
+                "
+            />
 
             <canvas
                 id="dither-canvas"
@@ -188,10 +218,9 @@
                     right: 20px;
                     bottom: 20px;
                     width: 516px;
-                    max-width: 40vw;
+                    max-width: 90vw;
                     height: auto;
                     image-rendering: pixelated;
-                    opacity: 0.4;
                     pointer-events: none;
                 "
             ></canvas>
